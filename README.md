@@ -26,24 +26,68 @@ The Histogram of gray scale image and color image is shown.
 
 ## Program:
 ```python
-# Developed By: 
-# Register Number: 
-
-
-
-
-
-
+# Developed By: karthick P
+# Register Number: 212222100021
+```
+### Input Grayscale Image and Color Image
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+import cv2
+Gray_image = cv2.imread("sea.png")
+Color_image = cv2.imread("lake2.jpg")
+plt.imshow(Gray_image)
+plt.show()
+plt.imshow(Color_image)
+plt.show()
+```
+### Histogram of Grayscale Image and any channel of Color Image
+```python
+plt.imshow(Gray_image)
+plt.show()
+hist =cv2.calcHist([Gray_image], [0], None, [256],[0,256])
+plt.figure()
+plt.title("Histogram")
+plt.xlabel('grayscale value')
+plt.ylabel('pixel count')
+plt.stem (hist)
+plt.show()
+plt.imshow(Color_image)
+plt.show()
+hist1=cv2.calcHist([Color_image], [1], None, [256], [0,256])
+plt.figure()
+plt.title("Histogram of Color Image - Green Channel")
+plt.xlabel("Intensity Value")
+plt.ylabel("Pixel Count")
+plt.stem (hist1)
+plt.show()
+```
+### Histogram Equalization of Grayscale Image.
+```python
+plt.imshow(Color_image)
+plt.show()
+hist1=cv2.calcHist([Color_image], [1], None, [256], [0,256])
+plt.figure()
+plt.title("Histogram of Color Image - Green Channel")
+plt.xlabel("Intensity Value")
+plt.ylabel("Pixel Count")
+plt.stem (hist1)
+plt.show()
 ```
 ## Output:
 ### Input Grayscale Image and Color Image
 
+![image](https://github.com/karthickprabakaran/Histogram-of-an-images/assets/166775653/69b3453d-52ac-4810-8e02-0e4da9ced074)
+
+![image](https://github.com/karthickprabakaran/Histogram-of-an-images/assets/166775653/71e768b7-d244-480f-8bf1-300295fd5482)
+
+
 
 ### Histogram of Grayscale Image and any channel of Color Image
 
+![image](https://github.com/karthickprabakaran/Histogram-of-an-images/assets/166775653/9d32929e-d048-46ac-bde3-2234486e8e0d)
 
-
-### Histogram Equalization of Grayscale Image.
+![image](https://github.com/karthickprabakaran/Histogram-of-an-images/assets/166775653/b5f12363-de40-4d52-9ee0-24adb668acd4)
 
 
 
